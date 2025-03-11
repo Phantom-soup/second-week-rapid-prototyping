@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwhnf2dxda622"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f01rt"]
+
+[node name="KillBox" type="StaticBody2D"]
+collision_layer = 3
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+color = Color(0.882353, 0.2, 0.266667, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["killbox"]]
+shape = SubResource("RectangleShape2D_f01rt")

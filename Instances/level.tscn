@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dx42o3kak3q50"]
+
+[ext_resource type="PackedScene" uid="uid://bvr8nriqnbfkx" path="res://Instances/platform.tscn" id="1_8u53k"]
+[ext_resource type="PackedScene" uid="uid://dwhnf2dxda622" path="res://Instances/kill_box.tscn" id="2_f5k1v"]
+
+[node name="Level" type="Node"]
+
+[node name="Platform" parent="." instance=ExtResource("1_8u53k")]
+position = Vector2(601, 440)
+scale = Vector2(50, 1)
+
+[node name="KillBox" parent="." instance=ExtResource("2_f5k1v")]
+position = Vector2(652, 420)
