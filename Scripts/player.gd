@@ -18,7 +18,5 @@ func _physics_process(delta: float) -> void:
 		position.y += gravity * delta
 	move_and_slide()
 
-
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.get_parent().name.begins_with("kill"):
-		hide()
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	pass

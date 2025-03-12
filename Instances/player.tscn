@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dfwmjd1rasvcn"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_5omb3"]
-[ext_resource type="Texture2D" uid="uid://bwyhrvrmor4p" path="res://Images/pixil-frame-0.png" id="2_g6o56"]
+[ext_resource type="Texture2D" uid="uid://bwyhrvrmor4p" path="res://Resources/pixil-frame-0.png" id="2_g6o56"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xfqrg"]
 radius = 6.0
@@ -19,9 +19,14 @@ texture = ExtResource("2_g6o56")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_xfqrg")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["player"]]
+collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_xl6ew")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

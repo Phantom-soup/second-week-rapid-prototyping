@@ -1,12 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjhtn1ljj4o37"]
+[gd_scene load_steps=4 format=3 uid="uid://bjhtn1ljj4o37"]
 
 [ext_resource type="PackedScene" uid="uid://dfwmjd1rasvcn" path="res://Instances/player.tscn" id="1_jdfns"]
+[ext_resource type="Script" path="res://Scripts/main.gd" id="1_njca1"]
 [ext_resource type="PackedScene" uid="uid://dx42o3kak3q50" path="res://Instances/level.tscn" id="2_12x80"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_njca1")
 
 [node name="Player" parent="." instance=ExtResource("1_jdfns")]
-position = Vector2(318, 168)
+position = Vector2(127, 287)
 scale = Vector2(2, 2)
+gravity = 500
 
 [node name="Level" parent="." instance=ExtResource("2_12x80")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -478.0
+offset_top = -461.0
+offset_right = 2579.0
+offset_bottom = 1589.0
+color = Color(0, 0, 0, 1)
